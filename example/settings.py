@@ -123,3 +123,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SOCIAL_LINKS_FIELD_MEDIA_TYPES = [
+    # value, label
+    ("facebook", "Facebook"),
+    ("instagram", "Instagram"),
+    ("youtube", "YouTube"),
+]

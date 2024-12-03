@@ -4,6 +4,9 @@
 
 `social-links-field` is a Django package that provides a custom model field, form field, and widget for managing social media links with ease. It allows developers to store and manage multiple social media links for a model with built-in validation and a user-friendly interface.
 
+
+![Admin Panel Screenshot](./social_links_field/screenshot.png?raw=true)
+
 ## Features
 
 - Custom JSON-based field for storing social media links
@@ -72,7 +75,19 @@ class UserProfileAdmin(admin.ModelAdmin):
 - YouTube
 - Custom
 
+Configure the downdown values from `settings.py`
+```
+SOCIAL_LINKS_FIELD_MEDIA_TYPES = [
+    # value, label
+    ("facebook", "Facebook"),
+    ("instagram", "Instagram"),
+    ("twitter", "Twitter"),
+    ("linkedin", "LinkedIn"),
+    ("github", "GitHub"),
+    ("youtube", "YouTube"),
+]
 
+```
 
 ## Data Structure
 
