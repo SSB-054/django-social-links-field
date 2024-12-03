@@ -97,7 +97,7 @@ Social links are stored as a list of dictionaries:
 [
     {
         'type': 'facebook', 
-        'username': 'example_user', 
+        'link': 'example_user', 
         'label': 'My Facebook Profile'
     }
 ]

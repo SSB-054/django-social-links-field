@@ -26,9 +26,9 @@
                 </option>
                 {% endfor %}
             </select>
-            <input type="text" name="{{ name }}_username" 
-                   value="{{ link.username }}" 
-                   placeholder="Username" required>
+            <input type="text" name="{{ name }}_link" 
+                   value="{{ link.link }}" 
+                   placeholder="Profile/Page Link" required>
             <input type="text" name="{{ name }}_label" 
                    value="{{ link.label }}" 
                    placeholder="Label (optional)">
@@ -53,7 +53,7 @@
                     <option value="{{ type_value }}">{{ type_label }}</option>
                     {% endfor %}
                 </select>
-                <input type="text" name="{{ name }}_username" placeholder="Username" required>
+                <input type="text" name="{{ name }}_link" placeholder="Link" required>
                 <input type="text" name="{{ name }}_label" placeholder="Label (optional)">
                 <button type="button" class="remove-link">Remove</button>
             `;
