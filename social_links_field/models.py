@@ -21,11 +21,16 @@ else:
 class SocialLinksWidget(forms.Widget):
     template_name = "social_links_field/social_links_widget.html"
 
+    def format_value(self, value):
+        if value and type(value) == str:
+            return json.loads(value)    
+        return []
+    
     def get_context(self, name, value, attrs):
         ctx = {
             "name": name,
             "social_media_types": SOCIAL_MEDIA_TYPES,
-            "links": json.loads(value) if value else [],
+            "links": self.format_value(value),
             "attrs": self.build_attrs(self.attrs, attrs or {}),
         }
         return ctx
@@ -36,6 +41,7 @@ class SocialLinksWidget(forms.Widget):
         links = data.getlist(f"{name}_link")
         labels = data.getlist(f"{name}_label")
         for type_, link, label in zip(types, links, labels):
+            
             if type_:
                 response.append(
                     {
@@ -44,11 +50,15 @@ class SocialLinksWidget(forms.Widget):
                         "label": label,
                     }
                 )
-        return json.dumps(response)
+        return response
 
 
 class SocialLinksFormField(forms.JSONField):
 
+    def to_python(self, value):
+        res = super().to_python(value) or []
+        return res
+    
     def __init__(self, *args, **kwargs):
         # Set default help text
         if "help_text" not in kwargs:

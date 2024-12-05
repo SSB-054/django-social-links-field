@@ -2,7 +2,7 @@
     .social-links-widget button{
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
-        padding: 0.25rem 0.25rem;
+        padding: 0.5rem 0.8rem;
         background: var(--button-bg);
         color: var(--button-fg);
         border: none;
@@ -16,6 +16,9 @@
 </style>
 <div id="{{ name }}_container" class="social-links-widget">
     <div id="{{ name }}_links">
+        <!-- Hidden input to store JSON data -->
+        <input type="hidden" name="{{ name }}">
+        
         {% for link in links %}
         <div class="social-link-row">
             <select name="{{ name }}_type" required>
@@ -36,7 +39,7 @@
         </div>
         {% endfor %}
     </div>
-    <button type="button" id="{{ name }}_add_link" class="button">Add Social Link</button>
+    <button type="button" id="{{ name }}_add_link" class="button">Add Link</button>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {

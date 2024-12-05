@@ -128,8 +128,12 @@ SOCIAL_MEDIA_TYPES += [
     ('tiktok', 'TikTok'),
     ('telegram', 'Telegram')
 ]
-```
 
+```
+You can customize html/css/js by directly overriding default widget html template
+```
+social_links_field/social_links_widget.html
+```
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
